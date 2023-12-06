@@ -29,7 +29,7 @@ export class CountryComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router
   ) {}
-// Permet l'initialisation au début de la page pour récupérer nos valeurs et qu'elles s'affichent correctement
+// generate datas from our observable olympics
   ngOnInit(): void {
     this.countryId = +this.route.snapshot.params['id'];
     this.olympics$ = this.olympicService.getOlympics();
@@ -37,7 +37,7 @@ export class CountryComponent implements OnInit, OnDestroy {
       this.modifyChartData(value)
     );
   }
-//Permet de supprimer les données une fois le navigateur fermé.
+//Close the data generated from our observables olympics
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }

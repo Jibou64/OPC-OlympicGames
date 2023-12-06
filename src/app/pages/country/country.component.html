@@ -1,0 +1,25 @@
+<div *ngIf="olympics$ | async as olympic">
+  <div class="TopTitle">
+    <h2 class="countryTitle">{{ olympic[countryId].country }}</h2>
+  </div>
+    <div id="mainInfos">
+      <div class="specificInfos">
+        <span>Numbers of entries:</span>
+        <br/><strong>{{ olympic[countryId].participations.length }}</strong>
+      </div>
+      <div class="specificInfos">
+        <span>Total number medals:</span>
+        <br /><strong>{{ totalMedals }}</strong>
+      </div>
+      <div class="specificInfos">
+        <span>Total number athletes:</span><br />
+        <strong>{{ totalAthletes }}</strong>
+      </div>
+    </div>
+  </div>
+  <div class="chartContainer">
+    <canvas id="MyChart"></canvas>
+  </div>
+  <div class="backHome">
+    <button (click)="goBackHome()">Home</button>
+  </div>

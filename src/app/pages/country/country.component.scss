@@ -1,0 +1,69 @@
+
+
+.TopTitle{
+    display: flex;
+    background-color: #56abb3;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    margin-left: 40%;
+    padding-bottom: 2px;
+    border-radius: 8px;
+}
+.countryTitle{
+    display: flex;
+    color: white;
+    justify-content: center;
+}
+#mainInfos{
+    display: flex;
+    justify-content: space-around;
+    justify-content: column;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-top: 10px;
+}
+.specificInfos{
+    width: 200px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border: solid 3px;
+    border-color: #56abb3;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 10px;
+
+}
+
+.chartContainer{
+    display: flex;
+    height: 450px;
+    width: 800px;
+    margin-left: 350px;
+    margin-top: 50px;
+}
+
+.backHome{
+    display: flex;
+    justify-content: center;
+button{
+    background-color: #56abb3;
+    color: white;
+    width: 100px;
+    border: none;
+    margin-top: 50px;
+
+    }
+}
+
+#MyChart{
+    justify-content: center;
+}
+span{
+    color: #989898;
+}
+strong{
+    color: black;
+}

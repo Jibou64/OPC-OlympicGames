@@ -1,3 +1,18 @@
 <h2>Olympic games app</h2>
 <hr />
 <p>{{ (olympics$ | async)?.length }} data loaded</p>
+
+<div class="HomePageTitle">
+    <h1>Medals per Country</h1>
+</div>
+<div class="HomePageInfos">
+    <div class="MainSpecificInfos">
+        <span>Number of JOs:<br/><strong>{{numberOfGames}}</strong> </span>
+    </div>
+    <div class="MainSpecificInfos">
+        <span>Number of countries: <br /><strong>{{ (olympics$ | async)?.length }}</strong></span>
+   </div>
+</div>
+<div class="ChartInfo">
+    <canvas id="pie-chart" style="width: 600px;"></canvas>
+</div>

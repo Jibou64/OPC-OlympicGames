@@ -14,17 +14,13 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Where to start
 
-As you can see, an architecture has already been defined for the project. It is just a suggestion, you can choose to use your own. The predefined architecture includes (in addition to the default angular architecture) the following:
+Once you are connected to localhost:4200, you will instant face the Homepage which is composed by few elements.
+Title and specific informations then a pie chart summuring the differents elements present in our database representating athletes, games and jo by countries during last years.
 
-- `components` folder: contains every reusable components
-- `pages` folder: contains components used for routing
-- `core` folder: contains the business logic (`services` and `models` folders)
+The Pie chart is interactive and dynmaic, so you can click on it and make an event which leads the page to be redirected to specific informations' page on the country you have selected before.
 
-I suggest you to start by understanding this starter code. Pay an extra attention to the `app-routing.module.ts` and the `olympic.service.ts`.
+On this following page, a line chart will represents informations about numbers of athletes who have been invovled in differents JO games during the last mondial games and the total number of medals.
 
-Once mastered, you should continue by creating the typescript interfaces inside the `models` folder. As you can see I already created two files corresponding to the data included inside the `olympic.json`. With your interfaces, improve the code by replacing every `any` by the corresponding interface.
+Finally, a bouton home can leads you back to the home page to make navigation easier between pages.
 
-You're now ready to implement the requested features.
-
-Good luck!
-Test Modificiation Fork
+Pie-Chart will automatically generate datas in function of country selectionned.

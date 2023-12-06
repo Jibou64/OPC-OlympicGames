@@ -3,7 +3,7 @@ import { take } from 'rxjs';
 import { OlympicService } from './core/services/olympic.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-root2',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

@@ -37,4 +37,65 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
+    /**
+   * Populates the empty pie chart with correct data
+   *
+   * @param olympics - The array of olympics retrieved by service
+   */
+
+    modifyChartData(olympics: Array<Olympic>): void {
+      if (olympics) {
+        for (let olympic of olympics) {
+          this.numberOfLabels.push(olympic.country);
+          this.numberOfMedals.push(this.olympicService.countMedals(olympic));
+          
+        }
+        this.numberOfGames = this.olympicService.countGames(olympics);
+        this.createChart();
+      }
+    }
+    /**
+     * Creates an empty pie chart, responsive.
+     * Creates the click event that lets navigate to specific chosen country
+     */
+    
+    createChart(): void {
+      this.pieChart = new Chart('pie-chart', {
+        type: 'pie',
+  
+        data: {
+          labels: this.numberOfLabels,
+          datasets: [
+            {
+              data: this.numberOfMedals,
+              hoverOffset: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+  
+          onClick: (e) => {
+            try {
+              this.router.navigateByUrl(
+                '/' +
+                  this.pieChart.getElementsAtEventForMode(
+                    e,
+                    'nearest',
+                    { intersect: true },
+                    true
+                  )[0].index
+              );
+            } catch {}
+          },
+          plugins: {
+            legend: {
+              display: false,
+            }
+          },
+        },
+      });
+    }
 }

@@ -29,6 +29,8 @@ export class CountryComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router
   ) {}
+
+
 // generate datas from our observable olympics
   ngOnInit(): void {
     this.countryId = +this.route.snapshot.params['id'];
@@ -37,14 +39,15 @@ export class CountryComponent implements OnInit, OnDestroy {
       this.modifyChartData(value)
     );
   }
+
 //Close the data generated from our observables olympics
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
- /**
-   * Function to get our chart with differents labels used
-   * 
-   */
+  /**
+     * Creates an empty pie chart, responsive.
+     * Creates the click event that lets navigate to specific chosen country
+     */
   createChart(): void {
     this.lineChart = new Chart('MyChart', {
       type: 'line',
@@ -68,17 +71,12 @@ export class CountryComponent implements OnInit, OnDestroy {
       },
     });
   }
- /**
-   * Function to get our number of athletes
+  /**
+   * Populates the empty pie chart with correct data
    *
-   * @param participations - The stream of datas from olympic.participations
-   * @param countryId - The stream of datas concerning countries from olympics
-   * @param numberOfLabels - Count number of labels registered from our data
-   * @param numberOfMedals - Count the number of Medals registered from our data
-   * @param totalAthletes - Count the number of Athmetes registered from our data
-   * @param totalMedals - Count the total number of Medals registered from our data
-   * @param numberOfLabels - Count the number of Labels registered from our data
+   * @param olympics - The array of olympics retrieved by service
    */
+
   modifyChartData(olympics: Array<Olympic>): void {
     if (olympics) {
       const olympic = olympics[this.countryId].participations;

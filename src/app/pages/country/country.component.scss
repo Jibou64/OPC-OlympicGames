@@ -1,5 +1,3 @@
-
-
 .TopTitle{
     display: flex;
     background-color: #56abb3;
@@ -66,4 +64,65 @@ span{
 }
 strong{
     color: black;
+}
+
+// ---------------------------- PHONE ------------------------------------
+.TopTitle-Phone{
+    display: flex;
+    background-color: #56abb3;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    margin:auto;
+    padding-bottom: 2px;
+    border-radius: 8px;
+}
+.countryTitle-Phone{
+    display: flex;
+    color: white;
+    justify-content: center;
+}
+#mainInfos-Phone{
+    display: flex;
+    justify-content: space-around;
+    justify-content: column;
+    margin: auto;
+    padding-top: 10px;
+}
+.specificInfos-Phone{
+    width: 120px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    border: solid 3px;
+    border-color: #56abb3;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 10px;
+
+}
+
+.chartContainer-Phone{
+    display: flex;
+    height: 250px;
+    width: 100%;
+
+}
+
+.backHome-Phone{
+    display: flex;
+    justify-content: center;
+button{
+    background-color: #56abb3;
+    color: white;
+    width: 100px;
+    border: none;
+    margin-top: 50px;
+
+    }
+}
+
+#MyChart-Phone{
+    justify-content: center;
 }

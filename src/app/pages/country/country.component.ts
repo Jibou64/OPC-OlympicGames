@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Chart } from 'chart.js';
 import { Observable, Subscription, of } from 'rxjs';
@@ -13,7 +13,7 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.scss'],
 })
-export class CountryComponent implements OnInit, OnDestroy {
+export class CountryComponent implements OnInit, OnDestroy, AfterViewInit {
   country!: Olympic;
   olympics$!: Observable<Array<Olympic>>;
   countryId!: number;
@@ -23,16 +23,32 @@ export class CountryComponent implements OnInit, OnDestroy {
   totalMedals: number = 0;
   totalAthletes: number = 0;
   subscription!: Subscription;
+  mobileMedia:any = window.matchMedia("(max-width:520px")
+  screenType:boolean = false;
 
   constructor(
     private olympicService: OlympicService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+    if (this.mobileMedia.matches){
+      this.screenType = !this.screenType;
+    }
+    else {
+      this.screenType = this.screenType;
+    }
+  }
+
+
+
+
+  ngAfterViewInit(): void {
+    this.createChart();
+  }
 
 
 // generate datas from our observable olympics
-  ngOnInit(): void {
+  ngOnInit(): any {
     this.countryId = +this.route.snapshot.params['id'];
     this.olympics$ = this.olympicService.getOlympics();
     this.subscription = this.olympics$.subscribe((value) =>
@@ -85,9 +101,11 @@ export class CountryComponent implements OnInit, OnDestroy {
         this.numberOfMedals.push(entry.medalsCount);
         this.totalMedals += entry.medalsCount;
         this.totalAthletes += entry.athleteCount;
+        console.log("Reussi")
       }
       this.createChart();
     } else {
+      console.log("Raté")
       this.router.navigateByUrl('error');
     }
   }

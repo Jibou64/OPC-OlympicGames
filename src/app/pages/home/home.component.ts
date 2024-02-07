@@ -20,8 +20,19 @@ export class HomeComponent implements OnInit, OnDestroy {
   numberOfMedals: Array<number> = [];
   numberOfGames: number = 0;
   subscription!: Subscription;
+  mobileMedia:any = window.matchMedia("(max-width:520px")
+  screenType:boolean = false;
 
-  constructor(private olympicService: OlympicService, private router: Router) {}
+  constructor(private olympicService: OlympicService, private router: Router) {
+    if (this.mobileMedia.matches){
+      this.screenType = !this.screenType;
+    }
+    else {
+      this.screenType = this.screenType;
+    }
+  }
+
+  
 
 
 
@@ -29,6 +40,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.olympics$ = this.olympicService.getOlympics();
     this.subscription = this.olympics$.subscribe((value) => {
       this.modifyChartData(value);
+      console.log(this.screenType)
     });
   }
 

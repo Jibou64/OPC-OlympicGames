@@ -1,52 +1,54 @@
-.TopTitle{
-    display: flex;
-    background-color: #56abb3;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 50px;
-    margin-left: 40%;
-    padding-bottom: 2px;
-    border-radius: 8px;
-}
+
+
 .countryTitle{
     display: flex;
-    color: white;
     justify-content: center;
+    align-items: center;
+    background-color: #56abb3;
+    border-radius: 8px;
+    width: fit-content;
+    height: 50px;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+    
+
+
 }
-#mainInfos{
+h1{
+    color: white;
+}
+
+.mainInfos{
     display: flex;
-    justify-content: space-around;
-    justify-content: column;
-    margin-left: 300px;
-    margin-right: 300px;
-    padding-top: 10px;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-bottom: 10px;
+
 }
 .specificInfos{
-    width: 200px;
-    height: 50px;
-    align-items: center;
-    justify-content: center;
-    border: solid 3px;
-    border-color: #56abb3;
+    width: fit-content;
+    border: solid 3px #56abb3;
+    padding: 10px;
     border-radius: 5px;
+    border-color: #56abb3;
     text-align: center;
-    padding-top: 10px;
-
+    margin: auto;
 }
-
 .chartContainer{
-    display: flex;
-    height: 450px;
-    width: 800px;
-    margin-left: 350px;
-    margin-top: 50px;
+    margin: auto;
+    width: 70vw;
+    height: 70vh;
 }
 
 .backHome{
     display: flex;
     justify-content: center;
+    margin: auto;
+
+}
 button{
+    margin: auto;
     background-color: #56abb3;
     color: white;
     width: 100px;
@@ -54,11 +56,9 @@ button{
     margin-top: 50px;
 
     }
-}
 
-#MyChart{
-    justify-content: center;
-}
+
+
 span{
     color: #989898;
 }
@@ -66,63 +66,6 @@ strong{
     color: black;
 }
 
-// ---------------------------- PHONE ------------------------------------
-.TopTitle-Phone{
-    display: flex;
-    background-color: #56abb3;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 50px;
-    margin:auto;
-    padding-bottom: 2px;
-    border-radius: 8px;
-}
-.countryTitle-Phone{
-    display: flex;
-    color: white;
-    justify-content: center;
-}
-#mainInfos-Phone{
-    display: flex;
-    justify-content: space-around;
-    justify-content: column;
-    margin: auto;
-    padding-top: 10px;
-}
-.specificInfos-Phone{
-    width: 120px;
-    height: 70px;
-    align-items: center;
-    justify-content: center;
-    border: solid 3px;
-    border-color: #56abb3;
-    border-radius: 5px;
-    text-align: center;
-    padding-top: 10px;
 
-}
 
-.chartContainer-Phone{
-    display: flex;
-    height: 250px;
-    width: 100%;
 
-}
-
-.backHome-Phone{
-    display: flex;
-    justify-content: center;
-button{
-    background-color: #56abb3;
-    color: white;
-    width: 100px;
-    border: none;
-    margin-top: 50px;
-
-    }
-}
-
-#MyChart-Phone{
-    justify-content: center;
-}

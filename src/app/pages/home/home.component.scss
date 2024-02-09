@@ -6,9 +6,12 @@
     align-items: center;
     background-color: #56abb3;
     border-radius: 8px;
-    width: 300px;
+    width: fit-content;
     height: 50px;
-    margin-left: 40%;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+    
 
 
 }
@@ -18,14 +21,12 @@ h1{
 .HomePageInfos{
     display: flex;
     justify-content: space-evenly;
-    padding-left: 400px;
-    padding-right: 400px;
-    padding-top: 20px;
-
+    margin: auto;
+    
 
 }
 .MainSpecificInfos{
-
+    width: fit-content;
     border: solid 3px #56abb3;
     padding: 10px;
     border-radius: 5px;
@@ -33,11 +34,9 @@ h1{
     text-align: center;
 }
 .ChartInfo{
-    display: flex;
-    justify-content: center;
-    width: 450px;
-    height: 450px;
-    margin-left: 500px;
+    margin: auto;
+    width: 70vw;
+    height: 70vh;
 }
 
 

@@ -1,5 +1,5 @@
 
-    <div *ngIf="!screenType" class="container">
+    
         <div class="HomePageTitle">
             <h1>Medals per Country</h1>
         </div>
@@ -12,26 +12,9 @@
             </div>
         </div>
         <div class="ChartInfo">
-            <canvas id="pie-chart" style="width: 600px;"></canvas>
+            <canvas id="pie-chart"></canvas>
         </div>
-    </div>
-
-    <div *ngIf="screenType" class="container-Phone">
-        <div class="HomePageTitle-Phone">
-            <h1>Medals per Country</h1>
-        </div>
-        <div class="HomePageInfos-Phone">
-            <div class="MainSpecificInfos-Phone">
-                <span>Number of JOs:<br/><strong>{{numberOfGames}}</strong> </span>
-            </div>
-            <div class="MainSpecificInfos-Phone">
-            <span>Number of countries: <br /><strong>{{ (olympics$ | async)?.length }}</strong></span>
-            </div>
-        </div>
-        <div class="ChartInfo-Phone">
-            <canvas id="pie-chart" style="width: 600px;"></canvas>
-        </div>
-    </div>
 
 
+    
 
